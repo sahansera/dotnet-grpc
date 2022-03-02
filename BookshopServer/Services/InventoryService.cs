@@ -13,9 +13,20 @@ public class InventoryService : Inventory.InventoryBase
 
   public override Task<GetBookListResponse> GetBookList(GetBookListRequest request, ServerCallContext context)
   {
+    _logger.LogInformation("Received request to: GetBookList");
     var response = new GetBookListResponse();
-    response.Books.Add(new Book { Title = "The C# Book", Author = "Joe Smith" });
-    response.Books.Add(new Book { Title = "The Go Book", Author = "Jane Doe" });
+    response.Books.Add(new Book
+    {
+      Title = "The Hitchhiker's Guide to the Galaxy",
+      Author = "Douglas Adams",
+      PageCount = 42
+    });
+    response.Books.Add(new Book
+    {
+      Title = "The Lord of the Rings",
+      Author = "J.R.R. Tolkien",
+      PageCount = 1234
+    });
     return Task.FromResult(response);
   }
 }
