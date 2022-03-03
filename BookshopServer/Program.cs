@@ -16,7 +16,7 @@ builder.WebHost.ConfigureKestrel(options =>
 
 // Add services to the container.
 builder.Services.AddGrpc();
-// builder.Services.AddGrpcReflection();
+builder.Services.AddGrpcReflection();
 
 var app = builder.Build();
 
