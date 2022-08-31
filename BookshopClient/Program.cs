@@ -1,5 +1,4 @@
-﻿using System.Threading.Tasks;
-using Grpc.Net.Client;
+﻿using Grpc.Net.Client;
 using Bookshop;
 
 // The port number must match the port of the gRPC server.

@@ -1,6 +1,5 @@
 using BookshopServer.Services;
 using Microsoft.AspNetCore.Server.Kestrel.Core;
-using System.Runtime.InteropServices;
 
 var builder = WebApplication.CreateBuilder(args);
 const int Port = 5000;
