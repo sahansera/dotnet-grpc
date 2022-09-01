@@ -9,8 +9,13 @@ const int Port = 5000;
 builder.WebHost.ConfigureKestrel(options =>
 {
   // Setup a HTTP/2 endpoint without TLS.
-  options.ListenLocalhost(Port, o => o.Protocols =
-      HttpProtocols.Http2);
+  options.ListenAnyIP(8080);
+  // options.ListenLocalhost(Port, o => o.Protocols =
+  //     HttpProtocols.Http2);
+  options.ListenAnyIP(8585, listenOptions => 
+  { 
+      listenOptions.Protocols = Microsoft.AspNetCore.Server.Kestrel.Core.HttpProtocols.Http2; 
+  }); 
 });
 
 // Add services to the container.
