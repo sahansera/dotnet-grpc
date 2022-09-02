@@ -1,17 +1,12 @@
 using BookshopServer.Services;
-using Microsoft.AspNetCore.Server.Kestrel.Core;
 
 var builder = WebApplication.CreateBuilder(args);
-const int Port = 5000;
 
 // Additional configuration is required to successfully run gRPC on macOS.
 // For instructions on how to configure Kestrel and gRPC clients on macOS, visit https://go.microsoft.com/fwlink/?linkid=2099682
 builder.WebHost.ConfigureKestrel(options =>
 {
-  // Setup a HTTP/2 endpoint without TLS.
   options.ListenAnyIP(8080);
-  // options.ListenLocalhost(Port, o => o.Protocols =
-  //     HttpProtocols.Http2);
   options.ListenAnyIP(8585, listenOptions => 
   { 
       listenOptions.Protocols = Microsoft.AspNetCore.Server.Kestrel.Core.HttpProtocols.Http2; 
