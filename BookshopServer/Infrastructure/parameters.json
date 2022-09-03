@@ -1,0 +1,45 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "subscriptionId": {
+            "value": "9efe25aa-1a69-4e9a-9fce-8458614b4bf0"
+        },
+        "name": {
+            "value": "net6-grpc"
+        },
+        "location": {
+            "value": "Australia Southeast"
+        },
+        "hostingPlanName": {
+            "value": "ASP-net6grpc-901e"
+        },
+        "serverFarmResourceGroup": {
+            "value": "net6-grpc"
+        },
+        "alwaysOn": {
+            "value": false
+        },
+        "ftpsState": {
+            "value": "FtpsOnly"
+        },
+        "sku": {
+            "value": "Basic"
+        },
+        "skuCode": {
+            "value": "B1"
+        },
+        "workerSize": {
+            "value": "0"
+        },
+        "workerSizeId": {
+            "value": "0"
+        },
+        "numberOfWorkers": {
+            "value": "1"
+        },
+        "linuxFxVersion": {
+            "value": "DOTNETCORE|6.0"
+        }
+    }
+}
