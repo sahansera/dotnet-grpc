@@ -18,7 +18,7 @@ PARAMETERS_FILE=$4
 az group create --name $RESOURCE_GROUP_NAME --location $LOCATION
 
 # Deploy template
-az group deployment create --resource-group $RESOURCE_GROUP_NAME \
+az deployment group create --resource-group $RESOURCE_GROUP_NAME \
  --template-file $TEMPLATE_FILE \
  --parameters $PARAMETERS_FILE \
  --parameters name=$RESOURCE_GROUP_NAME serverFarmResourceGroup=$RESOURCE_GROUP_NAME 
